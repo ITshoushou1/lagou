@@ -24,8 +24,17 @@ App({
 
     let options = {}
 
+    // 需要登录才能访问的路由
+    let isLoginRoute = ['customInfo', 'customDetail', 'resume', 'collection', 'deliver', 'deliverDetail', 'interview']
+    if (isLoginRoute.find((item) => item == routerName)) {
+      options.url = routes.login
+      wx.navigateTo(options)
+      return
+    }
+
     // tab页面只能用wx.switchTab()进行跳转
-    if ('index' == routerName || 'search' == routerName || 'mine' == routerName) {
+    let tabs = ['index', 'search', 'mine']
+    if (tabs.find((item) => item == routerName)) {
       options.url = routes[routerName]
       wx.switchTab(options)
     }
