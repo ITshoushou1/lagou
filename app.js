@@ -26,7 +26,7 @@ App({
 
     // 需要登录才能访问的路由
     let isLoginRoute = ['customInfo', 'customDetail', 'resume', 'collection', 'deliver', 'deliverDetail', 'interview']
-    if (isLoginRoute.find((item) => item == routerName)) {
+    if (!this.isLogin && isLoginRoute.find((item) => item == routerName)) {
       options.url = routes.login
       wx.navigateTo(options)
       return
