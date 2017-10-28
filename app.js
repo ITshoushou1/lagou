@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
   },
   globalData: {
+    userInfo: {}
   },
   isLogin: false,
   navTo(routerName, qeury) {
@@ -66,5 +67,6 @@ App({
     companyDetail: 'company/companyId', // 公司招聘信息
     cities: 'cities', // 城市列表
     search: 'search', // 搜索职位
+    login: 'user/login', // 登录接口
   }
 })
